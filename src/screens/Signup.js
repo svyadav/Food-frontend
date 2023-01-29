@@ -35,6 +35,10 @@ export default function Signup() {
             )
         }
 
+        if(json.success){
+          navigate('/login')
+      }
+
     }
   return (
     <>
@@ -62,7 +66,7 @@ export default function Signup() {
     <input type="text" className="form-control" name="geolocation" value={credentials.geolocation} onChange={onChange}/>
   </div>
 
-  <button type="submit" className="m-3 btn btn-primary success" onClick={()=>navigate('/login')}>Submit</button>
+  <button type="submit" className="m-3 btn btn-primary success">Submit</button>
   <Link to="/login" className='m-3 btn btn-success'> Already a User</Link>
 </form>
     </div>
