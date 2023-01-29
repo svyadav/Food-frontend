@@ -1,6 +1,8 @@
 import React from "react";
 import { useCart, useDispatchCart } from "../components/ContextReducer";
+
 import env from "../environment"
+import { FaTrash} from "react-icons/fa";
 export default function Cart() {
   let data = useCart();
   let dispatch = useDispatchCart();
@@ -47,7 +49,7 @@ export default function Cart() {
               <th scope="col">Quantity</th>
               <th scope="col">Option</th>
               <th scope="col">Amount</th>
-              <th scope="col"></th>
+              <th scope="col">Action</th>
             </tr>
           </thead>
           <tbody className="text-white">
@@ -58,16 +60,11 @@ export default function Cart() {
                 <td>{food.qty}</td>
                 <td>{food.size}</td>
                 <td>{food.price}</td>
-                <td>
-                  <button type="button" className="btn p-0">
-                    <img
-                      src=""
-                      alt="delete"
-                      onClick={() => {
-                        dispatch({ type: "REMOVE", index: index });
-                      }}
-                    />
-                  </button>{" "}
+                <td> 
+                  <button type="button" onClick={() => {
+                        dispatch({ type: "REMOVE", index: index })
+                      }}><FaTrash/>
+                  </button>
                 </td>
               </tr>
             ))}
