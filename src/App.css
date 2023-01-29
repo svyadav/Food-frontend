@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* Login */
+
+.login-wrapper {
+   display: flex; 
+  justify-content: center;
+   align-items: center;
+  height: 100vh;
+   /* text-align: center; */
+  background-image: url("../public/foods.jpg");
+  background-position: center;
+  background-size: cover;
+  
+}
+.login {
+  width: 800px;
+  background: #fff;
+  /* border: 1px solid #dddfe2; */
+  /* box-shadow: 0px 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%); */
+  border-radius: 8px;
+  padding: 2rem;
+}
+
