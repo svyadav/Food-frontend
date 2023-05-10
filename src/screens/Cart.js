@@ -3,7 +3,10 @@ import { useCart, useDispatchCart } from "../components/ContextReducer";
 
 import env from "../environment"
 import { FaTrash} from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Pay from "./Pay";
 export default function Cart() {
+  const navigate=useNavigate()
   let data = useCart();
   let dispatch = useDispatchCart();
   if (data.length === 0) {
@@ -35,6 +38,8 @@ export default function Cart() {
     if (response.status === 200) {
       dispatch({ type: "DROP" });
     }
+
+    navigate("/payment")
   };
 
   let totalPrice = data.reduce((total, food) => total + food.price, 0);
@@ -80,6 +85,7 @@ export default function Cart() {
           </button>
         </div>
       </div>
+    
     </div>
   );
 }

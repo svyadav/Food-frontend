@@ -10,6 +10,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Signup from "./screens/Signup";
 import { CartProvider } from "./components/ContextReducer";
 import MyOrder from "./screens/MyOrder";
+import Pay from "./screens/Pay";
+
+
+
+
+
 
 function App() {
   return (
@@ -22,6 +28,9 @@ function App() {
               <Route exact path="/login" element={<Login />} />
               <Route exact path="/createuser" element={<Signup />} />
               <Route exact path="/myorder" element={<MyOrder/>} />
+          
+            <Route exact path="/payment" element={<Pay/>} />
+           
             </Routes>
           </div>
         </BrowserRouter>
